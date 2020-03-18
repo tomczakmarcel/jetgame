@@ -40,12 +40,20 @@
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.points = new System.Windows.Forms.Label();
+            this.diedscreen = new System.Windows.Forms.PictureBox();
+            this.restartbox = new System.Windows.Forms.PictureBox();
+            this.explosion = new System.Windows.Forms.PictureBox();
+            this.quitbox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diedscreen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.restartbox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.explosion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quitbox)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -59,7 +67,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(47, 104);
+            this.pictureBox1.Location = new System.Drawing.Point(25, 103);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(73, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -126,7 +134,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(185, 12);
+            this.pictureBox6.Location = new System.Drawing.Point(196, 12);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(108, 16);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -148,6 +156,56 @@
             this.points.TabIndex = 6;
             this.points.Text = "0";
             // 
+            // diedscreen
+            // 
+            this.diedscreen.BackColor = System.Drawing.Color.Transparent;
+            this.diedscreen.Image = ((System.Drawing.Image)(resources.GetObject("diedscreen.Image")));
+            this.diedscreen.Location = new System.Drawing.Point(126, 43);
+            this.diedscreen.Name = "diedscreen";
+            this.diedscreen.Size = new System.Drawing.Size(233, 174);
+            this.diedscreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.diedscreen.TabIndex = 8;
+            this.diedscreen.TabStop = false;
+            this.diedscreen.Visible = false;
+            // 
+            // restartbox
+            // 
+            this.restartbox.BackColor = System.Drawing.Color.Transparent;
+            this.restartbox.Image = ((System.Drawing.Image)(resources.GetObject("restartbox.Image")));
+            this.restartbox.Location = new System.Drawing.Point(252, 219);
+            this.restartbox.Name = "restartbox";
+            this.restartbox.Size = new System.Drawing.Size(107, 26);
+            this.restartbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.restartbox.TabIndex = 9;
+            this.restartbox.TabStop = false;
+            this.restartbox.Visible = false;
+            this.restartbox.Click += new System.EventHandler(this.restartbox_Click);
+            // 
+            // explosion
+            // 
+            this.explosion.BackColor = System.Drawing.Color.Transparent;
+            this.explosion.Image = ((System.Drawing.Image)(resources.GetObject("explosion.Image")));
+            this.explosion.Location = new System.Drawing.Point(12, 9);
+            this.explosion.Name = "explosion";
+            this.explosion.Size = new System.Drawing.Size(89, 87);
+            this.explosion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.explosion.TabIndex = 10;
+            this.explosion.TabStop = false;
+            this.explosion.Visible = false;
+            // 
+            // quitbox
+            // 
+            this.quitbox.BackColor = System.Drawing.Color.Transparent;
+            this.quitbox.Image = ((System.Drawing.Image)(resources.GetObject("quitbox.Image")));
+            this.quitbox.Location = new System.Drawing.Point(126, 219);
+            this.quitbox.Name = "quitbox";
+            this.quitbox.Size = new System.Drawing.Size(68, 26);
+            this.quitbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.quitbox.TabIndex = 11;
+            this.quitbox.TabStop = false;
+            this.quitbox.Visible = false;
+            this.quitbox.Click += new System.EventHandler(this.quitbox_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,6 +213,10 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::space_game_MT.Properties.Resources.tlo_gry;
             this.ClientSize = new System.Drawing.Size(484, 261);
+            this.Controls.Add(this.quitbox);
+            this.Controls.Add(this.explosion);
+            this.Controls.Add(this.restartbox);
+            this.Controls.Add(this.diedscreen);
             this.Controls.Add(this.points);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
@@ -173,6 +235,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diedscreen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.restartbox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.explosion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quitbox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,6 +256,10 @@
         public System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label points;
+        private System.Windows.Forms.PictureBox diedscreen;
+        private System.Windows.Forms.PictureBox restartbox;
+        private System.Windows.Forms.PictureBox explosion;
+        private System.Windows.Forms.PictureBox quitbox;
     }
 }
 

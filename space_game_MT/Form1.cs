@@ -15,6 +15,7 @@ namespace space_game_MT
     {
         public int bulletcount = 0;
         public int killcount = 0;
+        public int speedy = 0;
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +29,19 @@ namespace space_game_MT
 
         }
 
+        void death()
+        {
+            killcount = 0;
+            diedscreen.Visible = true;
+            explosion.Location = pictureBox1.Location;
+            explosion.Visible = true;
+            pictureBox1.Visible = false;
+            timer1.Enabled = false;
+            timer2.Enabled = false;
+            timer3.Enabled = false;
+            restartbox.Visible = true;
+            quitbox.Visible = true;
+        }
 
         void enemy()
         {
@@ -82,8 +96,10 @@ namespace space_game_MT
             {
                 pictureBox1.Top = 229;
             }
-            pictureBox2.Left -= 2;
-            pictureBox3.Left -= 1;
+            speedy = (killcount / 15);
+            Console.WriteLine(speedy);
+            pictureBox2.Left -= (2+speedy);
+            pictureBox3.Left -= (1+speedy);
 
             if (pictureBox2.Bounds.IntersectsWith(pictureBox4.Bounds))
             {
@@ -116,6 +132,14 @@ namespace space_game_MT
             if (pictureBox3.Left <= 0)
             {
                 enemy1();
+            }
+            if (pictureBox2.Bounds.IntersectsWith(pictureBox1.Bounds))
+            {
+                death();
+            }
+            if (pictureBox2.Bounds.IntersectsWith(pictureBox1.Bounds))
+            {
+                death();
             }
         }
 
@@ -195,6 +219,16 @@ namespace space_game_MT
         private void pictureBox6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void quitbox_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void restartbox_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
